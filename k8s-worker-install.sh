@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 apt update
-hostnamectl set-hostname k8smaster.hashlabs.in
+hostnamectl set-hostname k8sworker.hashlabs.in
 exec bash
 alias c=clear
 swapoff -a
