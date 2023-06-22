@@ -1,9 +1,6 @@
 #!/usr/bin/bash
 
 apt update
-hostnamectl set-hostname k8smaster.hashlabs.in
-exec bash
-alias c=clear
 swapoff -a
 
 sudo tee /etc/modules-load.d/containerd.conf <<EOF
@@ -44,4 +41,4 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 curl https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml -O
 kubectl apply -f calico.yaml
 
-echo "Installation completed"
+echo "INSTALLATION COMPLETED !!!"

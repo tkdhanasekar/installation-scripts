@@ -1,0 +1,35 @@
+do before run this script
+
+In k8s master server
+# apt update
+# hostnamectl set-hostname k8smaster.hashlabs.in
+# exec bash
+
+# vim /etc/hosts
+xx.xx.xx.xx  k8smaster.hashlabs.in  k8smaster
+xx.xx.xx.xx  k8sworker.hashlabs.in  k8sworker
+:x
+
+# vim /etc/fstab
+
+# comment the swap entry
+:x 
+save and exit
+
+
+In k8s worker server
+# apt update        
+# hostnamectl set-hostname k8sworker.hashlabs.in
+# exec bash         
+                    
+# vim /etc/hosts    
+xx.xx.xx.xx  k8smaster.hashlabs.in  k8smaster
+xx.xx.xx.xx  k8sworker.hashlabs.in  k8sworker
+:x                  
+                    
+# vim /etc/fstab    
+                    
+# comment the swap entry
+:x                  
+save and exit       
+

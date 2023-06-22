@@ -1,9 +1,6 @@
 #!/usr/bin/bash
 
 apt update
-hostnamectl set-hostname k8sworker.hashlabs.in
-exec bash
-alias c=clear
 swapoff -a
 
 sudo tee /etc/modules-load.d/containerd.conf <<EOF
@@ -36,4 +33,4 @@ apt update
 apt install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 
-echo "attach to master node"
+echo "ATTACH TO MASTER NODE !!!"
