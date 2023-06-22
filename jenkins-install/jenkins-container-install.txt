@@ -1,0 +1,26 @@
+create directory jenkins_data
+
+# mkdir jenkins_data
+
+Now create the docker-compose.yaml file
+
+# vim dokcer-compose.yaml
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    user: root
+    volumes:
+      - /home/venus/jenkins/jenkins_data/jenkins_home:/var/jenkins_home
+      - /home/venus/jenkins/jenkins_data/log:/var/log
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+:wq! save and exit
+
+# docker-compose up -d
+
+http://localhost:8080 
+or 
+http://server_ip:8080
