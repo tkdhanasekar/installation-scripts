@@ -33,7 +33,7 @@ apt update
 apt install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 
-sudo kubeadm init --pod-network-cidr=10.10.0.0/16 --control-plane-endpoint=k8smaster.hashlabs.in
+sudo kubeadm init --pod-network-cidr=10.10.0.0/16 --control-plane-endpoint=kmaster.hashlabs.in
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
