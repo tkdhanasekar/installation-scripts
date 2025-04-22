@@ -6,14 +6,13 @@ chmod a+r /etc/apt/keyrings/docker.gpg
 echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 curl -L "https://github.com/docker/compose/releases/download/v2.35.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ls -lsh /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-systemctl start docker && systemctl enable docker && systemctl status docker
+systemctl start docker && systemctl enable docker
 chmod +x /usr/bin/docker-compose
 docker version && docker compose version && docker-compose version
-
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
