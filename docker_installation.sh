@@ -9,10 +9,10 @@ sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.35.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ls -lsh /usr/local/bin/docker-compose
-#sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo chmod +x /usr/bin/docker-compose
 sudo usermod -aG docker $USER
 newgrp docker
 docker version && docker compose version && docker-compose version
 sudo systemctl start docker && sudo systemctl enable docker
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
