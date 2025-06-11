@@ -2,7 +2,7 @@
 
 
 docker மென்பொருளை உங்கள் கணினியில் நிறுவ இந்த கட்டளையை செயல்படுத்தவும் 
-<code style="color : blue">ubuntu / debian / Linux Mint OS -ல்  நிறுவ</code>
+:maple_leaf: ubuntu / debian / Linux Mint OS -ல்  நிறுவ
 ```
 apt install docker.io containerd docker-buildx docker-compose-v2 docker-compose
 ```
